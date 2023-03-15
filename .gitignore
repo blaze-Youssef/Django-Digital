@@ -8,3 +8,4 @@ mediafiles
 .idea
 env
 venv
+.vscode
