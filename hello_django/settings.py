@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
 
 DATABASES = {}
 DATABASES["default"] = dj_database_url.config()
+print(DATABASES)
 # Application definition
 
 INSTALLED_APPS = [
