@@ -30,8 +30,9 @@ ALLOWED_HOSTS = [
 
 
 DATABASES = {}
+print(os.getenv("DATABASE_URL", "None"))
 DATABASES["default"] = dj_database_url.config()
-print(DATABASES)
+
 # Application definition
 
 INSTALLED_APPS = [
