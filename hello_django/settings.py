@@ -30,8 +30,11 @@ ALLOWED_HOSTS = [
 
 
 DATABASES = {}
-print(os.getenv("DATABASE_URL", "None"))
-DATABASES["default"] = dj_database_url.config()
+DATABASE_URL = os.getenv("DATABASE_URL")
+if DATABASE_URL:
+    DATABASES["default"] = dj_database_url.config(DATABASE_URL)
+else:
+    raise Exception("No DATABASE_URL was passed.")
 
 # Application definition
 
