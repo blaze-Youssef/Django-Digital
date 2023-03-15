@@ -28,10 +28,9 @@ ALLOWED_HOSTS = [
     x.strip() for x in os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 ]
 
-DATABASE_URL = os.getenv("DATABASE_URL")
 
 DATABASES = {}
-DATABASES["default"] = dj_database_url.config(default=DATABASE_URL)
+DATABASES["default"] = dj_database_url.config()
 # Application definition
 
 INSTALLED_APPS = [
