@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
 
 DATABASE_URL = os.getenv("DATABASE_URL", None)
 if DATABASE_URL:
-    DATABASES = dj_database_url.parse(DATABASE_URL)
+    DATABASES = DATABASES = {"default": dj_database_url.parse(DATABASE_URL)}
 # Application definition
 
 INSTALLED_APPS = [
