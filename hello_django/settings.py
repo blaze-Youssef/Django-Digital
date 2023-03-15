@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
-from urllib.parse import urlparse
+
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,8 @@ ALLOWED_HOSTS = [
 ]
 
 DATABASE_URL = os.getenv("DATABASE_URL", None)
-
+if DATABASE_URL:
+    DATABASES = dj_database_url.parse(DATABASE_URL)
 # Application definition
 
 INSTALLED_APPS = [
